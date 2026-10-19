@@ -1,0 +1,193 @@
+// Version: 4.0.0
+type AccessControlState__839576991 =
+  {
+    var adminAssigned : Bool;
+    userRoles : Map__386906547<Principal, UserRole__434724065>
+  };
+type Data__265875254<K, V> = {var count : Nat__58649523; kvs : [var ?(K, V)]};
+type ExerciseId__205069915 = Nat;
+type ExerciseId__242828629 = Nat;
+type ExerciseType__678210176 =
+  {
+    #fillBlank;
+    #matchWordMeaning;
+    #multipleChoice;
+    #orderWords;
+    #selectAymaraWord;
+    #selectTranslation;
+    #trueFalse
+  };
+type ExerciseType__707449601 =
+  {
+    #fillBlank;
+    #matchWordMeaning;
+    #multipleChoice;
+    #orderWords;
+    #selectAymaraWord;
+    #selectTranslation;
+    #trueFalse
+  };
+type Exercise__161306508 =
+  {
+    correctAnswer : Text;
+    exerciseType : ExerciseType__707449601;
+    explanation : Text;
+    id : ExerciseId__205069915;
+    options : [Text];
+    prompt : Text
+  };
+type Exercise__765830623 =
+  {
+    correctAnswer : Text;
+    exerciseType : ExerciseType__678210176;
+    explanation : Text;
+    id : ExerciseId__242828629;
+    options : [Text];
+    prompt : Text
+  };
+type Internal__161573640<K, V> =
+  {children : [var ?Node__430031793<K, V>]; data : Data__265875254<K, V>};
+type Leaf__1045638083<K, V> = {data : Data__265875254<K, V>};
+type LessonId__1039271329 = Nat;
+type LessonId__874009035 = Nat;
+type Lesson__653676474 =
+  {
+    difficulty : Nat;
+    examples : [Text];
+    exercises : [Exercise__161306508];
+    id : LessonId__874009035;
+    mastery : Nat;
+    objective : Text;
+    title : Text;
+    vocabulary : [WordId__1028135775];
+    xp : Nat
+  };
+type Lesson__899569943 =
+  {
+    difficulty : Nat;
+    examples : [Text];
+    exercises : [Exercise__765830623];
+    id : LessonId__1039271329;
+    mastery : Nat;
+    objective : Text;
+    title : Text;
+    vocabulary : [WordId__932314505];
+    xp : Nat
+  };
+type List__1004628775<T> =
+  {
+    var blockIndex : Nat__58649523;
+    var blocks : [var [var ?T]];
+    var elementIndex : Nat__58649523
+  };
+type List__89170296<T> = List__1004628775<T>;
+type Map__13625999<K, V> =
+  {var root : Node__430031793<K, V>; var size : Nat__58649523};
+type Map__386906547<K, V> = Map__670138087<K, V>;
+type Map__670138087<K, V> = Map__13625999<K, V>;
+type Nat__58649523 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__783349852 =
+  {
+    accessControlState : AccessControlState__839576991;
+    phrases : Map__386906547<PhraseId__147009719, Phrase__194480476>;
+    units : List__89170296<Unit__39383009>;
+    words : Map__386906547<WordId__932314505, Word__498795798>
+  };
+type Node__430031793<K, V> =
+  {#internal : Internal__161573640<K, V>; #leaf : Leaf__1045638083<K, V>};
+type OldActor__837661173 = {};
+type PhraseId__147009719 = Nat;
+type PhraseId__623690782 = Nat;
+type Phrase__181948170 =
+  {
+    audio : Text;
+    aymara : Text;
+    category : Text;
+    difficulty : Nat;
+    explanation : Text;
+    id : PhraseId__623690782;
+    spanish : Text
+  };
+type Phrase__194480476 =
+  {
+    audio : Text;
+    aymara : Text;
+    category : Text;
+    difficulty : Nat;
+    explanation : Text;
+    id : PhraseId__147009719;
+    spanish : Text
+  };
+type UnitId__33958074 = Nat;
+type UnitId__94462884 = Nat;
+type Unit__198328622 =
+  {
+    description : Text;
+    id : UnitId__94462884;
+    lessons : [Lesson__653676474];
+    locked : Bool;
+    title : Text
+  };
+type Unit__39383009 =
+  {
+    description : Text;
+    id : UnitId__33958074;
+    lessons : [Lesson__899569943];
+    locked : Bool;
+    title : Text
+  };
+type UserRole__434724065 = {#admin; #guest; #user};
+type UserRole__91647283 = {#admin; #guest; #user};
+type WordId__1028135775 = Nat;
+type WordId__932314505 = Nat;
+type Word__498795798 =
+  {
+    audio : Text;
+    aymara : Text;
+    category : Text;
+    difficulty : Nat;
+    example : Text;
+    id : WordId__932314505;
+    image : ?Text;
+    mastery : Nat;
+    spanish : Text
+  };
+type Word__755781906 =
+  {
+    audio : Text;
+    aymara : Text;
+    category : Text;
+    difficulty : Nat;
+    example : Text;
+    id : WordId__1028135775;
+    image : ?Text;
+    mastery : Nat;
+    spanish : Text
+  };
+{
+  "20260823_000000" : (old : OldActor__837661173) -> NewActor__783349852
+}
+actor  {
+  stable accessControlState :
+    {
+      var adminAssigned : Bool;
+      userRoles : Map__386906547<Principal, UserRole__91647283>
+    };
+  stable phrases :
+    {
+      var root : Node__430031793<PhraseId__623690782, Phrase__181948170>;
+      var size : Nat__58649523
+    };
+  stable units :
+    {
+      var blockIndex : Nat__58649523;
+      var blocks : [var [var ?Unit__198328622]];
+      var elementIndex : Nat__58649523
+    };
+  stable words :
+    {
+      var root : Node__430031793<WordId__1028135775, Word__755781906>;
+      var size : Nat__58649523
+    }
+};

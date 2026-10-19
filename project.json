@@ -1,0 +1,21 @@
+{
+  "overview": "A mobile-first PWA for learning the Aymara language from Spanish, with gamified lessons, vocabulary, games, XP, streaks and an identity inspired by Andean textiles.",
+  "features": [
+    "Learn Aymara through interactive gamified lessons",
+    "Vertical learning path with progressive unit unlocking",
+    "Vocabulary section with mastery tracking",
+    "Play educational games (Memoria Aymara, Empareja palabras)",
+    "Earn XP, level up and keep daily streaks",
+    "Guest mode with progress saved on device",
+    "Visual identity inspired by Andean textiles and culture"
+  ],
+  "category": "education",
+  "tags": [
+    "education",
+    "language-learning",
+    "aymara",
+    "mobile",
+    "gamification"
+  ],
+  "last_updated": "2026-08-23T23:04:31.085Z"
+}
